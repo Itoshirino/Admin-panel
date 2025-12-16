@@ -1,11 +1,49 @@
 const elForm = document.querySelector(".form");
 const api = `https://fakestoreapi.com/auth/login`;
+const btn = document.querySelector(".form__btn");
+const loginBtn = document.querySelector(".btn");
+document.querySelector(".password__icon").addEventListener("click", () => {
+  const passwd = document.querySelector(".passwd");
+  const icon = document.querySelector(".passwd__icon");
+  if (passwd.type === "password") {
+    passwd.type = "text";
+    icon.classList.remove("ri-eye-line");
+    icon.classList.add("ri-eye-off-line");
+  } else {
+    passwd.type = "password";
+    icon.classList.remove("ri-eye-off-line");
+    icon.classList.add("ri-eye-line");
+  }
+});
+
+btn.addEventListener("click", () => {
+  Toastify({
+    text: `Username: derek 
+     Password: jklg*_56`,
+    duration: 7000,
+    style: {
+      background: "linear-gradient(to right, #b00000ff, red)",
+    },
+  }).showToast();
+});
+
+loginBtn.addEventListener("click", () => {
+  if (elForm["username"].value === "" || elForm["password"].value === "") {
+    Toastify({
+      text: `Please fill the inputs`,
+      duration: 7000,
+      style: {
+        background: "linear-gradient(to right, #b00000ff, red)",
+      },
+    }).showToast();
+    return;
+  }
+});
 const handleSubmit = (e) => {
   e.preventDefault();
 
   const username = elForm["username"].value.trim();
   const password = elForm["password"].value.trim();
-
   const user = {
     username,
     password,
@@ -18,45 +56,6 @@ const handleSubmit = (e) => {
 
     window.location.href = "../Pages/dashboard.html";
   });
-
-  //fetch request
-
-  // fetch(api, {
-  //   method: "POST",
-  //   headers: { "Content-Type": "application/json" },
-  //   body: JSON.stringify(user),
-  // })
-  //   .then((res) => res.json())
-  //   .then((data) => {
-  //     const token = data.token;
-
-  //     if (token) {
-  //       localStorage.setItem("token", token);
-
-  //       alert("success");
-
-  //       window.location.href = "../pages/dashboard.html";
-  //     }
-  // //   });
-
-  // const request = new XMLHttpRequest();
-
-  // request.addEventListener("readystatechange", () => {
-  //   if (request.readyState === 4) {
-  //     const token = JSON.parse(request.responseText);
-  //     localStorage.setItem("token", token.token);
-  //     alert("success");
-
-  //     window.location.href = "../pages/dashboard.html";
-  //   }
-  // });
-
-  // request.open("POST", api);
-  // request.setRequestHeader("Content-Type", "application/json");
-
-  // request.send(JSON.stringify(user));
-
-  // console.log(username, password);
 };
 
 elForm.addEventListener("submit", handleSubmit);

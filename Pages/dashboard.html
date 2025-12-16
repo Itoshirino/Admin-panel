@@ -4,20 +4,154 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin-Panel</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/normaliza.css" />
-    <link rel="stylesheet" href="css/fonts.css" />
-    <link rel="icon" type="image/png" href="./Img/image.png" />
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/normaliza.css" />
+    <link rel="stylesheet" href="../css/fonts.css" />
+    <link rel="icon" type="image/png" href="../Img/image.png" />
 
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
       rel="stylesheet"
     />
   </head>
-  <body>
-    <h1>Dashboardga xush kelibsan</h1>
 
-    <button class="logout">logOut</button>
+  <body>
+    <div class="box">
+      <div class="box__wrapper">
+      <section class="dashboard__card">
+        <div class="dashboard__logo">AdminKit</div>
+
+        <input
+          type="text"
+          class="dashboard__search"
+          placeholder="Search..."
+        />
+
+        <nav class="dashboard__nav">
+          <ul class="dashboard__list">
+            <li class="dashboard__box1">Dashboard</li>
+            <li class="dashboard__box1">Calendar</li>
+            <li class="dashboard__box1">Profile</li>
+            <li class="dashboard__box1">Task</li>
+            <li class="dashboard__box1">Forms</li>
+            <li class="dashboard__box1">Tables</li>
+            <li class="dashboard__box1">Pages</li>
+          </ul>
+
+          <div class="dashboard__title">Support</div>
+
+          <ul class="dashboard__list">
+            <li class="dashboard__box1">
+              Messages <span class="dashboard__badge">Pro</span>
+            </li>
+            <li class="dashboard__box1">
+              Inbox <span class="dashboard__badge">Pro</span>
+            </li>
+            <li class="dashboard__box1">
+              Invoice <span class="dashboard__badge">Pro</span>
+            </li>
+          </ul>
+
+          <div class="dashboard__title">Others</div>
+
+          <ul class="dashboard__list">
+            <li class="dashboard__box1">Charts</li>
+            <li class="dashboard__box1">UI Elements</li>
+          </ul>
+        <nav/>
+
+        <div class="dashboard__user">
+          <img
+            src="../Img/image.png"
+            class="dashboard__avatar"
+            alt="User"
+          />
+          <div>
+            <div class="dashboard__username">Farrux</div>
+            <div class="dashboard__userrole">Web Creator</div>
+          </div>
+        </div>
+
+        <button class="logout">
+          <i class="ri-logout-box-r-line"></i>
+          <span>logout</span>
+        </button>
+      </section>
+
+      <main class="dashboard__main">
+        <div class="dashboard__cards">
+          <div class="dashboard__card">
+            <div class="dashboard__cardtitle">Total Views</div>
+            <div class="dashboard__cardvalue">$3.456K</div>
+            <div class="dashboard__cardchange green">0.43% ↑</div>
+          </div>
+
+          <div class="dashboard__card">
+            <div class="dashboard__cardtitle">Total Profils</div>
+            <div class="dashboard__cardvalue">$45.2K</div>
+            <div class="dashboard__cardchange green">4.35% ↑</div>
+          </div>
+
+          <div class="dashboard__card">
+            <div class="dashboard__cardtitle">Total Product</div>
+            <div class="dashboard__cardvalue">2.450</div>
+            <div class="dashboard__cardchange green">2.59% ↑</div>
+          </div>
+
+          <div class="dashboard__card">
+            <div class="dashboard__cardtitle">Total Users</div>
+            <div class="dashboard__cardvalue">3.456</div>
+            <div class="dashboard__cardchange red">0.95% ↓</div>
+          </div>
+        </div>
+
+        <div class="dashboard__charts">
+          <div class="dashboard__chart">
+            <div class="dashboard__charthead">
+              <div class="dashboard__charttabs">
+                <button class="dashboard__charttab active">
+                  Total Revenue
+                </button>
+                <button class="dashboard__charttab">Total Sales</button>
+              </div>
+              <div class="dashboard__chartdate">
+                12.04.2022 - 12.05.2022
+              </div>
+            </div>
+            <canvas id="lineChart"></canvas>
+          </div>
+
+          <div class="dashboard__chart small">
+            <div class="dashboard__charthead">
+              <div class="dashboard__charttitle">
+                Profils this week
+              </div>
+            </div>
+            <canvas id="barChart"></canvas>
+          </div>
+        </div>
+
+        <div class="dashboard__analytics">
+          <div class="dashboard__analyticscard">
+            <div class="dashboard__analyticshead">
+              <h3>Visitors Analytics</h3>
+              <select class="dashboard__select">
+                <option>Monthly</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="dashboard__analyticscard">
+            <div class="dashboard__analyticshead">
+              <h3>Region labels</h3>
+            </div>
+          </div>
+        </div>
+      </main>
+      </div>
+    </div>
+
     <script src="../Utills/dashboard.js"></script>
     <noscript>Java script is disabled!</noscript>
   </body>

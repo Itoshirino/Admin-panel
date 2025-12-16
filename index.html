@@ -13,40 +13,49 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
   </head>
   <body>
-    <video class="video-bg" autoplay muted loop>
+    <video class="bg__video" autoplay muted loop>
       <source src="./Img/video.mp4" />
     </video>
-    <div class="page">
-      <div class="overlay"></div>
+    <div class="card2">
+      <div class="bg__color"></div>
 
       <form class="form">
-        <h2>Kirish</h2>
+        <h2 class="title">Login</h2>
 
         <div class="inputs">
+          <i class="ri-map-pin-user-fill user__icon"></i>
           <input
             class="username"
             type="text"
             placeholder="derek"
             name="username"
-            value=""
           />
         </div>
 
         <div class="inputs">
+          <button class="inputs__btn password__icon">
+            <i class="ri-eye-line passwd__icon"></i>
+          </button>
           <input
             class="passwd"
             type="password"
             placeholder="jklg*_56"
             name="password"
-            value=""
           />
         </div>
 
-        <input type="submit" value="Kirish" class="btn" />
+        <input type="submit" value="Login" class="btn" />
+
+        <button type="button" class="form__btn">Forgot password</button>
       </form>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./Utills/login.js"></script>
     <noscript>Java script is disabled!</noscript>
