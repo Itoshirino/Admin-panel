@@ -15,7 +15,40 @@
     />
   </head>
   <body>
-    <script src="dashboard.js"></script>
+    <video class="video-bg" autoplay muted loop>
+      <source src="./Img/video.mp4" />
+    </video>
+    <div class="page">
+      <div class="overlay"></div>
+
+      <form class="form">
+        <h2>Kirish</h2>
+
+        <div class="inputs">
+          <input
+            class="username"
+            type="text"
+            placeholder="derek"
+            name="username"
+            value=""
+          />
+        </div>
+
+        <div class="inputs">
+          <input
+            class="passwd"
+            type="password"
+            placeholder="jklg*_56"
+            name="password"
+            value=""
+          />
+        </div>
+
+        <input type="submit" value="Kirish" class="btn" />
+      </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./Utills/login.js"></script>
     <noscript>Java script is disabled!</noscript>
   </body>
 </html>
