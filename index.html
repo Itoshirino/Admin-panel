@@ -25,6 +25,21 @@
     <div class="card2">
       <div class="bg__color"></div>
 
+      <form class="security">
+        <h2 class="title">Security Alert!</h2>
+        <input
+          name="security__input"
+          class="security__input"
+          type="password"
+          placeholder="Enter Security Key"
+        />
+
+        <button type="button" class="security__btn">
+          <i class="ri-file-check-fill"></i> Enter
+        </button>
+       
+        <button type="button" class="security__btn2"> <i class="ri-logout-box-r-line"></i>Exit</button>
+      </form>
       <form class="form">
         <h2 class="title">Login</h2>
 
@@ -33,7 +48,7 @@
           <input
             class="username"
             type="text"
-            placeholder="derek"
+            placeholder="Enter Username"
             name="username"
           />
         </div>
@@ -45,14 +60,17 @@
           <input
             class="passwd"
             type="password"
-            placeholder="jklg*_56"
+            placeholder="Enter Password"
             name="password"
           />
         </div>
 
         <input type="submit" value="Login" class="btn" />
 
-        <button type="button" class="form__btn">Forgot password</button>
+        <button type="button" class="form__btn2">Forgot password</button>
+        <button type="button" class="form__btn">
+          Forgot password (for admins)
+        </button>
       </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>

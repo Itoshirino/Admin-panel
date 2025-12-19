@@ -16,16 +16,31 @@
   flex-direction: column;
   align-content: center;
   justify-content: center;
+  text-align: center;
 
   &__btn {
-    margin-top: 20px;
     border-radius: 20px;
     color: #ff0000;
     background: transparent;
     border: none;
     padding: 15px 15px;
     transition: all 0.3s ease;
+    text-align: center;
 
+    &:hover {
+      text-decoration: underline;
+      color: white;
+    }
+  }
+
+  &__btn2 {
+    border-radius: 20px;
+    color: #ff0000;
+    background: transparent;
+    border: none;
+    padding: 15px 15px;
+    transition: all 0.3s ease;
+    text-align: center;
     &:hover {
       text-decoration: underline;
       color: white;
@@ -81,9 +96,7 @@
   letter-spacing: 0.5px;
   outline: none;
 
-  &:focus {
-    text-align: center;
-  }
+
 }
 
 .btn {
@@ -121,4 +134,71 @@
   height: 100%;
   object-fit: cover;
   z-index: -2;
+}
+
+.security {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__btn2 {
+    margin-top: 20px;
+    border-radius: 20px;
+    color: #ff0000;
+    background: transparent;
+    border: none;
+    padding: 15px 15px;
+    transition: all 0.3s ease;
+    text-align: center;
+
+    &:hover {
+      text-decoration: underline;
+      color: white;
+    }
+  }
+
+  &__btn {
+    margin-top: 20px;
+    border-radius: 20px;
+    color: #00ff1a;
+    background: transparent;
+    border: none;
+    padding: 15px 15px;
+    transition: all 0.3s ease;
+    text-align: center;
+    margin-left: 90px;
+
+    &:hover {
+      text-decoration: underline;
+      color: white;
+    }
+  }
+  &__input {
+    width: 100%;
+    padding: 15px 18px;
+    margin-bottom: 22px;
+    background: rgba(20, 25, 60, 0.6);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(120, 140, 255, 0.3);
+    border-radius: 12px;
+    color: #e6ebff;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    outline: none;
+    text-align: center;
+
+    &:focus {
+      text-align: start;
+    }
+  }
 }
