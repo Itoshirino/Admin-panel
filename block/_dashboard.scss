@@ -1,219 +1,191 @@
-.box {
+body {
   min-height: 100vh;
+  background: linear-gradient(90deg, #0b3c7a, #050816);
+  color: #e6e6f0;
   display: flex;
-  max-width: 1200px;
-  background: #ffffff;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
   width: 100%;
-  color: #334155;
-}
-
-.box__wrapper {
+  max-width: 420px;
+  padding: 45px;
+  border-radius: 20px;
+  background: rgba(26, 26, 46, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
   display: flex;
+  flex-direction: column;
+  gap: 28px;
 }
 
-.logout {
-  margin-top: 16px;
-  padding: 12px;
+h2 {
+  text-align: center;
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #d6ccff;
+}
+
+
+
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  width: 100%;
+}
+
+.card__left {
+  width: 260px;
+  background: linear-gradient(180deg, #050816, #0a0a15);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 25px 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__left h1 {
+  text-align: center;
+  font-size: 1.9rem;
+  font-weight: 800;
+  margin-bottom: 35px;
+  color: #cbbcff;
+}
+
+.navbar__list li a {
+  display: block;
+  padding: 14px 18px;
+  border-radius: 12px;
+  color: #b2b3c7;
+  transition: all 0.3s;
+}
+
+.navbar__list li a:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+}
+
+.card__left button {
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-top: 20px;
+  border-radius: 20px;
+  color: #ff0000;
+  background: transparent;
+  border: none;
+  padding: 15px 15px;
+  text-align: center;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+.card__left button:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+.card__right {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(5, 8, 22, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 18px 30px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar h2 {
+  color: #bfffe0;
+  font-weight: 700;
+}
+
+.navbar span {
+  color: #a6a6b8;
+}
+
+.navbar p {
+  color: #eaeaf2;
+  font-weight: 600;
+}
+
+.main {
+  padding: 35px;
+  flex-grow: 1;
+  color: #e4e4ee;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(15, 15, 30, 0.85);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5);
+}
+
+thead {
+  background: linear-gradient(135deg, #6f5cff, #9b8cff);
+}
+
+th {
+  padding: 16px;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #f6f4ff;
+}
+
+td {
+  padding: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: #dcdcf0;
+}
+
+tbody tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.action-buttons button {
+  padding: 7px 12px;
   border-radius: 8px;
   border: none;
-  background: rgba(239, 68, 68, 0.15);
-  color: #ef4444;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  &:hover {
-    background: rgba(239, 68, 68, 0.25);
-  }
+  font-size: 0.85rem;
+  transition: opacity 0.25s;
 }
 
-.dashboard {
-  display: flex;
-  width: 100%;
+.action-buttons .edit {
+  background: rgba(76, 175, 80, 0.75);
+  color: #eaffef;
+}
 
-  &__card {
-    width: 260px;
-    padding: 24px;
-    background: #1e293b;
-    color: #e2e8f0;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
+.action-buttons .delete {
+  background: rgba(244, 67, 54, 0.75);
+  color: #ffe5e3;
+}
 
-  &__logo {
-    font-size: 24px;
-    font-weight: 700;
-    color: #6366f1;
-  }
+.action-buttons button:hover {
+  opacity: 0.85;
+}
 
-  &__search {
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-  }
-
-  &__nav {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  &__list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  &__title {
-    font-size: 12px;
-    opacity: 0.6;
-  }
-
-  &__box1 {
-    padding: 10px 12px;
-    border-radius: 8px;
-    transition: 0.3s;
-
-    &:hover {
-      background: rgba(99, 102, 241, 0.2);
-      color: #6366f1;
-    }
-  }
-
-  &__badge {
-    font-size: 10px;
-    padding: 4px 6px;
-    background: #6366f1;
-    border-radius: 4px;
-    color: #fff;
-  }
-
-  &__user {
-    margin-top: auto;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  &__avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-  }
-
-  &__username {
-    font-weight: 600;
-  }
-
-  &__userrole {
-    font-size: 14px;
-    opacity: 0.7;
-  }
-
-  &__main {
-    flex: 1;
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-  }
-
-  &__cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-  }
-
-  &__card {
-    background: #232e3c;
-    padding: 24px;
-    border-radius: 12px;
-
-    &title {
-      font-size: 14px;
-      color: #64748b;
-    }
-
-    &value {
-      font-size: 28px;
-      font-weight: 700;
-    }
-
-    &change {
-      font-size: 14px;
-      font-weight: 600;
-
-      &.green {
-        color: #10b981;
-      }
-
-      &.red {
-        color: #ef4444;
-      }
-    }
-  }
-
-  &__charts {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 24px;
-  }
-
-  &__chart {
-    background: #fff;
-    padding: 24px;
-    border-radius: 12px;
-
-    &.small {
-      align-self: start;
-    }
-  }
-
-  &__charthead {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 16px;
-  }
-
-  &__charttabs {
-    display: flex;
-    gap: 16px;
-  }
-
-  &__charttab {
-    background: none;
-    border: none;
-    font-weight: 600;
-    color: #94a3b8;
-
-    &.active {
-      color: #6366f1;
-    }
-  }
-
-  &__analytics {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-  }
-
-  &__analyticscard {
-    background: #fff;
-    padding: 24px;
-    border-radius: 12px;
-  }
-
-  &__analyticshead {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  &__select {
-    padding: 8px 12px;
-    border-radius: 8px;
-    border: 1px solid #e2e8f0;
-  }
+.dashboard__avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
 }
