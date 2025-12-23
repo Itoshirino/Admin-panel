@@ -44,7 +44,7 @@ securityBtn.addEventListener("click", () => {
       userInput.value = "derek";
       passwd.value = "jklg*_56";
       securityInput.value = "";
-    }, 3000);
+    }, 1000);
   } else {
     Toastify({
       text: "Wrong Security Key!",
@@ -76,6 +76,19 @@ userBtn.addEventListener("click", () => {
   passwd.value = "user123";
 });
 
+const deleteProducta = (id) => {
+  fetch(`https://fakestoreapi.com/products/${id}`, {
+    method: "DELETE",
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      if (data) {
+        const elItems = document.querySelectorAll(".table-light");
+        elItems[id - 1].classList.add("none");
+      }
+    });
+};
+
 loginBtn.addEventListener("click", (e) => {
   e.preventDefault();
   const username = userInput.value.trim();
@@ -98,7 +111,7 @@ loginBtn.addEventListener("click", (e) => {
 
     setTimeout(() => {
       window.location.href = "../Pages/dashboard.html";
-    }, 1500);
+    }, 500);
     return;
   }
 
@@ -111,7 +124,7 @@ loginBtn.addEventListener("click", (e) => {
 
     setTimeout(() => {
       window.location.href = "./Pages/user.html";
-    }, 1500);
+    }, 500);
     return;
   }
 

@@ -53,12 +53,12 @@
 
         <div class="card__right">
           <nav class="navbar">
-            <h2 style="margin-top: 20px;">Admin-Panel</h2>
+            <h2 style="margin-top: 20px">Admin-Panel</h2>
             <div class="dashboard__user">
               <img
                 src="../Img/image.png"
                 class="dashboard__avatar"
-                alt="User"
+                alt=""
               />
               <div>
                 <div class="dashboard__username">Farrux</div>
@@ -68,11 +68,44 @@
           </nav>
 
           <main class="main">
-            <h3 style="margin-bottom: 20px; color: red">
+            <h3 style="margin-bottom: 20px; color: rgb(255, 255, 255)">
               <i class="ri-table-line"></i> Product List
             </h3>
 
+            <div class="modal none">
+              <div class="modal__content">
+                <h3>Create Task</h3>
+
+                <input type="text" placeholder="Title" class="task__title" />
+               
+                <input
+                  type="text"
+                  placeholder="Category"
+                  class="task__category"
+                />
+                <input
+                  type="text"
+                  placeholder="Description"
+                  class="task__desc"
+                ></input> 
+                <input
+                  type="text"
+                  placeholder="Price"
+                  class="task__price"
+                />
+                <input type="text" placeholder="Image URL" class="task__image" />
+
+                <div class="modal__btn">
+                  <button class="task__create">Create</button>
+                  <button class="task__cancel">Cancel</button>
+                </div>
+              </div>
+            </div>
+
             <table>
+              <button class="create__btn">
+                <i class="ri-add-line"></i> Create Task
+              </button>
               <thead>
                 <tr>
                   <th>T/R</th>
@@ -84,7 +117,7 @@
                   <th>Action</th>
                 </tr>
               </thead>
-              <tbody class="table-body">
+              <tbody class="table__body">
                 <tr>
                   <td>1</td>
                   <td>Smart Watch Z10</td>
@@ -93,8 +126,8 @@
                   <td>$129.99</td>
                   <td>
                     <img
-                      src="placeholder.jpg"
-                      alt="Product Image"
+                      src=""
+                      alt=""
                       style="
                         width: 60px;
                         height: 40px;
@@ -104,7 +137,7 @@
                       "
                     />
                   </td>
-                  <td class="action-buttons">
+                  <td class="action__buttons">
                     <button class="edit">
                       <i class="ri-pencil-line"></i> Edit
                     </button>
