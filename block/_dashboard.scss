@@ -150,8 +150,12 @@ tbody tr:hover {
 }
 
 .action__buttons .edit {
-  background: rgba(76, 175, 80, 0.75);
+  background: rgb(219 227 30 / 88%);
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
   color: #eaffef;
+  margin-top: 10px;
 }
 
 .action__buttons .delete {

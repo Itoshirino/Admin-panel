@@ -13,6 +13,10 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
   </head>
 
   <body>
@@ -21,45 +25,39 @@
         <div class="card__left">
           <ul class="navbar__list">
             <li>
-              <h1 class="">Dashboard</h1>
+              <h1>Dashboard</h1>
               <a href="#" class="active">
                 <i class="ri-home-4-line"></i> Home
               </a>
             </li>
             <li>
-              <a href="#"> <i class="ri-box-3-line"></i> About us </a>
+              <a href="#"><i class="ri-box-3-line"></i> About us</a>
             </li>
             <li>
-              <a href="#"> <i class="ri-file-user-line"></i> Users </a>
+              <a href="#"><i class="ri-file-user-line"></i> Users</a>
             </li>
             <li>
-              <a href="#"> <i class="ri-bar-chart-2-line"></i> Analytics </a>
+              <a href="#"><i class="ri-bar-chart-2-line"></i> Analytics</a>
             </li>
             <li>
-              <a href="#"> <i class="ri-settings-4-line"></i> Settings </a>
+              <a href="#"><i class="ri-settings-4-line"></i> Settings</a>
             </li>
             <li>
-              <a href="#"> <i class="ri-question-line"></i> Help </a>
+              <a href="#"><i class="ri-question-line"></i> Help</a>
             </li>
           </ul>
 
-          <div>
-            <button class="logout">
-              <i class="ri-logout-box-r-line"></i>
-              <span>logout</span>
-            </button>
-          </div>
+          <button class="logout">
+            <i class="ri-logout-box-r-line"></i>
+            <span>logout</span>
+          </button>
         </div>
 
         <div class="card__right">
           <nav class="navbar">
-            <h2 style="margin-top: 20px">Admin-Panel</h2>
+            <h2>Admin-Panel</h2>
             <div class="dashboard__user">
-              <img
-                src="../Img/image.png"
-                class="dashboard__avatar"
-                alt=""
-              />
+              <img src="../Img/image.png" class="dashboard__avatar" />
               <div>
                 <div class="dashboard__username">Farrux</div>
                 <div class="dashboard__user">Web Creator</div>
@@ -68,16 +66,16 @@
           </nav>
 
           <main class="main">
-            <h3 style="margin-bottom: 20px; color: rgb(255, 255, 255)">
-              <i class="ri-table-line"></i> Product List
-            </h3>
+            <h3><i class="ri-table-line"></i> Product List</h3>
 
+            <button class="create__btn" style="margin-top: 10px;">
+              <i class="ri-add-line"></i> Create Task
+            </button>
             <div class="modal none">
               <div class="modal__content">
                 <h3>Create Task</h3>
 
                 <input type="text" placeholder="Title" class="task__title" />
-               
                 <input
                   type="text"
                   placeholder="Category"
@@ -87,13 +85,13 @@
                   type="text"
                   placeholder="Description"
                   class="task__desc"
-                ></input> 
+                />
+                <input type="number" placeholder="Price$" class="task__price" />
                 <input
                   type="text"
-                  placeholder="Price"
-                  class="task__price"
+                  placeholder="Image URL"
+                  class="task__image"
                 />
-                <input type="text" placeholder="Image URL" class="task__image" />
 
                 <div class="modal__btn">
                   <button class="task__create">Create</button>
@@ -101,14 +99,10 @@
                 </div>
               </div>
             </div>
-
             <table>
-              <button class="create__btn">
-                <i class="ri-add-line"></i> Create Task
-              </button>
               <thead>
                 <tr>
-                  <th>T/R</th>
+                  <th>ID</th>
                   <th>Title</th>
                   <th>Category</th>
                   <th>Description</th>
@@ -117,23 +111,22 @@
                   <th>Action</th>
                 </tr>
               </thead>
+
               <tbody class="table__body">
                 <tr>
-                  <td>1</td>
+                  <td>5</td>
                   <td>Smart Watch Z10</td>
                   <td>Electronics</td>
-                  <td>High-end fitness tracker with AMOLED display.</td>
+                  <td>High-end fitness tracker</td>
                   <td>$129.99</td>
                   <td>
                     <img
                       src=""
-                      alt=""
                       style="
                         width: 60px;
                         height: 40px;
-                        background-color: #333;
+                        background: #333;
                         border-radius: 4px;
-                        display: block;
                       "
                     />
                   </td>
@@ -152,6 +145,7 @@
         </div>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="../Utills/dashboard.js"></script>
     <noscript>Java script is disabled!</noscript>
   </body>
