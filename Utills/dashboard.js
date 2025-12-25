@@ -1,9 +1,4 @@
 const logoutBtn = document.querySelector(".logout");
-const editBtn = document.querySelector(".edit");
-
-editBtn.addEventListener("click", () => {
-  alert("Edit function is not working now.");
-});
 
 const Logout = () => {
   setTimeout(() => {
@@ -78,6 +73,11 @@ const createBtn = document.querySelector(".create__btn");
 const taskCreateBtn = document.querySelector(".task__create");
 const cancelBtn = document.querySelector(".task__cancel");
 const deleteBtn = document.querySelector(".delete");
+const editBtn = document.querySelector(".edit");
+
+editBtn.addEventListener("click", () => {
+  alert("Edit function is not working now.");
+});
 
 modal.style.display = "none";
 
