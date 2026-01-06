@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/normaliza.css" />
     <link rel="stylesheet" href="../css/fonts.css" />
-    <link rel="icon" href="../Img/image.png" />
+    <link rel="icon" href="../Img/image2.png" />
 
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
@@ -26,21 +26,25 @@
           <ul class="navbar__list">
             <li>
               <h1>Dashboard</h1>
-              <a href="#" class="active">
-                <i class="ri-home-4-line"></i> Home
+              <a href="../Pages/dashboard.html" class="nav__link">
+                <i class="ri-home-4-line icon1"></i> Home
               </a>
             </li>
             <li>
-              <a href="#"><i class="ri-box-3-line"></i> About us</a>
+              <a href="../Pages/carts.html" class="nav__link2"
+                ><i class="ri-box-3-line icon2"></i> Carts
+              </a>
             </li>
             <li>
-              <a href="#"><i class="ri-file-user-line"></i> Users</a>
+              <a href="../Pages/user.html" class="nav__link3"
+                ><i class="ri-file-user-line icon3"></i> Users</a
+              >
             </li>
             <li>
-              <a href="#"><i class="ri-bar-chart-2-line"></i> Analytics</a>
+              <a href="../Pages/analytics.html"><i class="ri-bar-chart-2-line"></i> Analytics</a>
             </li>
             <li>
-              <a href="#"><i class="ri-settings-4-line"></i> Settings</a>
+              <a href="../Pages/settings.html"><i class="ri-settings-4-line"></i> Settings</a>
             </li>
             <li>
               <a href="#"><i class="ri-question-line"></i> Help</a>
@@ -68,7 +72,7 @@
           <main class="main">
             <h3><i class="ri-table-line"></i> Product List</h3>
 
-            <button class="create__btn" style="margin-top: 10px;">
+            <button class="create__btn" style="margin-top: 10px">
               <i class="ri-add-line"></i> Create Task
             </button>
             <div class="modal none">
@@ -96,6 +100,34 @@
                 <div class="modal__btn">
                   <button class="task__create">Create</button>
                   <button class="task__cancel">Cancel</button>
+                </div>
+              </div>
+            </div>
+            <div class="edit__modal none">
+              <div class="edit__modal__content">
+                <h3>Edit Task</h3>
+
+                <input type="text" placeholder="Title" class="task__title" />
+                <input
+                  type="text"
+                  placeholder="Category"
+                  class="task__category"
+                />
+                <input
+                  type="text"
+                  placeholder="Description"
+                  class="task__desc"
+                />
+                <input type="number" placeholder="Price$" class="task__price" />
+                <input
+                  type="text"
+                  placeholder="Image URL"
+                  class="task__image"
+                />
+
+                <div class="edit__modal__btn">
+                  <button class="task__create">Edit</button>
+                  <button class="task__cancel1">Cancel</button>
                 </div>
               </div>
             </div>
@@ -131,7 +163,7 @@
                     />
                   </td>
                   <td class="action__buttons">
-                    <button class="edit">
+                    <button class="edit__btn">
                       <i class="ri-pencil-line"></i> Edit
                     </button>
                     <button class="delete">

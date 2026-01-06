@@ -1,4 +1,8 @@
 const logoutBtn = document.querySelector(".logout");
+const editModal = document.querySelector(".edit__modal");
+const cancelBtnEdit = document.querySelector(".edit__cancel1");
+
+editModal.style.display = "none";
 
 const Logout = () => {
   setTimeout(() => {
@@ -25,27 +29,36 @@ function innerData(product) {
 
   product.map(({ id, title, price, image, category, description }, index) => {
     elBody.innerHTML += `
-        <tr>
-          <td>${index + 1}</td>
-          <td>${title}</td>
-          <td>${category}</td>
-          <td>${description}...</td>
-          <td>$${price}</td>
-          <td>
-            <img src="${image}" width="60" height="60" style="object-fit:contain;">
-          </td>
-          <td class="action__buttons">
-            <button class="delete" onclick="deleteProduct(${id})">
-              <i class="ri-delete-bin-line"></i> Delete
-            </button>
-             <button class="edit">
-                      <i class="ri-pencil-line"></i> Edit
-                    </button>
-          </td>
-        </tr>
-      `;
+      <tr>
+        <td>${index + 1}</td>
+        <td>${title}</td>
+        <td>${category}</td>
+        <td>${description}...</td>
+        <td>$${price}</td>
+        <td>
+          <img src="${image}" width="60" height="60" style="object-fit:contain;">
+        </td>
+        <td class="action__buttons">
+          <button class="delete" onclick="deleteProduct(${id})"> <i class="ri-delete-bin-fill"></i> Delete</button>
+          <button class="edit"> <i class="ri-pencil-line"></i> Edit</button>
+        </td>
+      </tr>
+    `;
+  });
+
+  document.querySelectorAll(".edit").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      editModal.style.display = "flex";
+    });
+  });
+
+  document.querySelectorAll(".task__cancel1").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      editModal.style.display = "none";
+    });
   });
 }
+
 function deleteProduct(id) {
   fetch(`https://fakestoreapi.com/products/${id}`, {
     method: "DELETE",
@@ -75,9 +88,7 @@ const cancelBtn = document.querySelector(".task__cancel");
 const deleteBtn = document.querySelector(".delete");
 const editBtn = document.querySelector(".edit");
 
-editBtn.addEventListener("click", () => {
-  alert("Edit function is not working now.");
-});
+console.log(editBtn);
 
 modal.style.display = "none";
 
@@ -89,15 +100,15 @@ if (createBtn) {
   createBtn.addEventListener("click", Create);
 }
 
-const cancel = () => {
+const Cancel = () => {
   setTimeout(() => {
     modal.style.display = "none";
-    modal.classList.add("none");
+    editModal.style.display = "none";
   }, 800);
 };
 
 if (cancelBtn) {
-  cancelBtn.addEventListener("click", cancel);
+  cancelBtn.addEventListener("click", Cancel);
 }
 const Delete = () => {
   setTimeout(() => {
@@ -205,6 +216,17 @@ function map({ id, title, price, image, category, description }) {
       </td>
     </tr>
   `;
+  document.querySelectorAll(".edit").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      editModal.style.display = "flex";
+    });
+  });
+
+  document.querySelectorAll(".task__cancel1").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      editModal.style.display = "none";
+    });
+  });
 }
 
 function clearModalInputs() {
@@ -213,4 +235,16 @@ function clearModalInputs() {
   document.querySelector(".task__desc").value = "";
   document.querySelector(".task__price").value = "";
   document.querySelector(".task__image").value = "";
+}
+
+const loc = window.location.href;
+
+console.log(loc);
+
+const link = document.querySelector(".nav__link");
+const icon1 = document.querySelector(".icon1");
+
+if (link.href === loc) {
+  link.classList.toggle("active");  
+  icon1.classList.replace("ri-home-4-line", "ri-home-2-fill");
 }

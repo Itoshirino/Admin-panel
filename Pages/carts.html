@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin-Panel</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/normaliza.css" />
+    <link rel="stylesheet" href="../css/fonts.css" />
+    <link rel="icon" href="../Img/image2.png" />
+
+    <style></style>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="card1">
+        <div class="card__left">
+          <ul class="navbar__list">
+            <li>
+              <h1>Dashboard</h1>
+              <a href="../Pages/dashboard.html" class="nav__link">
+                <i class="ri-home-4-line"></i> Home
+              </a>
+            </li>
+            <li>
+              <a href="../Pages/carts.html" class="nav__link2"
+                ><i class="ri-box-3-line"></i> Carts
+              </a>
+            </li>
+            <li>
+              <a href="../Pages/user.html" class="nav__link3"
+                ><i class="ri-file-user-line"></i> Users</a
+              >
+            </li>
+            <li>
+              <a href="../Pages/analytics.html"><i class="ri-bar-chart-2-line"></i> Analytics</a>
+            </li>
+            <li>
+              <a href="../Pages/settings.html"><i class="ri-settings-4-line"></i> Settings</a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-question-line"></i> Help</a>
+            </li>
+          </ul>
+
+          <button class="logout">
+            <i class="ri-logout-box-r-line"></i>
+            <span>logout</span>
+          </button>
+        </div>
+
+        <div class="card__right">
+          <nav class="navbar">
+            <h2>Admin-Panel</h2>
+            <div class="dashboard__user">
+              <img src="../Img/image.png" class="dashboard__avatar" />
+              <div>
+                <div class="dashboard__username">Farrux</div>
+                <div class="dashboard__user">Web Creator</div>
+              </div>
+            </div>
+          </nav>
+          <main class="main">
+            <h3><i class="ri-table-line"></i> Product List</h3>
+            <table>
+              <thead class="table__head">
+                <tr>
+                  <th>ID</th>
+                  <th>Date</th>
+                  <th>UserId</th>
+                  <th>Products</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody class="table__body"></tbody>
+            </table>
+          </main>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="../Utills/carts.js"></script>
+    <noscript>Java script is disabled!</noscript>
+  </body>
+</html>

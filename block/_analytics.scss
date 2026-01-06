@@ -1,0 +1,47 @@
+
+.dashboard {
+  padding: 32px;
+
+  &__stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+}
+
+.stat__card {
+  background: #0b0d2a;
+  border-radius: 12px;
+  padding: 20px;
+  width: 50%;
+
+  &__title {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 8px;
+  }
+
+  &__value {
+    font-size: 32px;
+    font-weight: 700;
+  }
+}
+
+.chart {
+  background: #0b0d2a;
+  border-radius: 12px;
+  padding: 20px;
+
+  &__title {
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+
+  &__graph {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    height: 160px;
+  }
+}

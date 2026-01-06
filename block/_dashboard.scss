@@ -1,6 +1,6 @@
 h2 {
   text-align: center;
-  font-size: 1.9rem;
+  font-size: 28px;
   font-weight: 700;
   letter-spacing: 1px;
   color: #d6ccff;
@@ -33,7 +33,7 @@ h2 {
 
 .card__left h1 {
   text-align: center;
-  font-size: 1.9rem;
+  font-size: 28px;
   font-weight: 800;
   margin-bottom: 35px;
   color: #cbbcff;
@@ -43,14 +43,27 @@ h2 {
   display: block;
   padding: 14px 18px;
   border-radius: 12px;
-  color: #b2b3c7;
-  transition: all 0.3s;
+  color: #ffffff;
+  transition: all 0.3s ease;
 }
 
-.navbar__list li a:hover {
-  background: rgba(255, 255, 255, 0.06);
-  color: #ffffff;
+.active {
+  background: linear-gradient(13deg, rgba(97, 102, 255, 1), rgba(14, 11, 6, 1));
+  -webkit-background: linear-gradient(
+    13deg,
+    rgba(97, 102, 255, 1),
+    rgba(14, 11, 6, 1)
+  );
+  -moz-background: linear-gradient(
+    13deg,
+    rgba(97, 102, 255, 1),
+    rgba(14, 11, 6, 1)
+  );
+  transform: translateY(-6px) translateX(12px);
+  transition: all 0.3s ease;
 }
+
+
 
 .card__left button {
   margin-top: 10px;
@@ -110,7 +123,7 @@ h2 {
 
 table {
   width: 100%;
-  border-collapse: separate;
+  border-collapse: collapse;
   border-spacing: 0;
   border-radius: 16px;
   overflow: hidden;
@@ -125,7 +138,7 @@ thead {
 
 th {
   padding: 16px;
-  font-size: 0.8rem;
+  font-size: 16px;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: #f6f4ff;
@@ -145,11 +158,19 @@ tbody tr:hover {
   padding: 7px 12px;
   border-radius: 8px;
   border: none;
-  font-size: 0.85rem;
   transition: opacity 0.25s;
 }
 
 .action__buttons .edit {
+  background: rgb(219 227 30 / 88%);
+  border: none;
+  border-radius: 12px;
+  color: #eaffef;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.action__buttons .edit__btn {
   background: rgb(219 227 30 / 88%);
   border: none;
   padding: 12px;
@@ -157,7 +178,6 @@ tbody tr:hover {
   color: #eaffef;
   margin-top: 10px;
 }
-
 .action__buttons .delete {
   background: rgba(244, 67, 54, 0.75);
   color: #ffe5e3;
@@ -200,11 +220,10 @@ tbody tr:hover {
     gap: 15px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     transform: translateY(-20px);
-    animation: slideDown 0.3s ease forwards;
 
     h3 {
       margin: 0;
-      font-size: 1.5rem;
+      font-size: 24px;
       color: #333;
       text-align: center;
     }
@@ -213,9 +232,9 @@ tbody tr:hover {
       padding: 10px 12px;
       border: 1px solid #ccc;
       border-radius: 8px;
-      font-size: 1rem;
+      font-size: 16px;
       outline: none;
-      transition: 0.2s;
+      transition: all 0.3s ease;
 
       &:focus {
         border-color: #4a90e2;
@@ -234,8 +253,8 @@ tbody tr:hover {
         padding: 10px;
         border: none;
         border-radius: 8px;
-        font-size: 1rem;
-        transition: 0.2s;
+        font-size: 16px;
+        transition: all 0.3s ease;
       }
     }
   }
@@ -252,6 +271,12 @@ tbody tr:hover {
 .task__cancel {
   background-color: #ff0000;
   color: #ffffff;
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
 
   &:hover {
     background-color: rgb(226, 0, 0);
@@ -259,6 +284,138 @@ tbody tr:hover {
   }
 }
 
+.navbar__list li a:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+}
+
+.create__btn {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  background: #8e44ad;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+
+  i {
+    font-size: 16px;
+    transition: all 2s ease;
+  }
+
+  &:hover {
+    background: #732d91;
+
+    i {
+      transform: rotate(3600deg) scale(1.2);
+    }
+  }
+
+  &:active {
+    transform: scale(0.97);
+    box-shadow: 0 3px 10px rgba(115, 45, 145, 0.4);
+  }
+}
+
+.edit__modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(black, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+
+  &__content {
+    background: #fff;
+    padding: 30px 25px;
+    width: 400px;
+    max-width: 90%;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-20px);
+
+    h3 {
+      margin: 0;
+      font-size: 24px;
+      color: #333;
+      text-align: center;
+    }
+
+    input {
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+      transition: all 0.3s ease;
+
+      &:focus {
+        border-color: #4a90e2;
+        box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+      }
+    }
+
+    .modal__btn {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 10px;
+
+      button {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}
+.task__create {
+  background-color: #00ff1a;
+  color: rgb(0, 0, 0);
+  gap: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #00d716;
+  }
+}
+
+.task__cancel1 {
+  background-color: #ff0000;
+  color: #ffffff;
+  color: #ffffff;
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: rgb(226, 0, 0);
+    color: black;
+  }
+}
 
 .create__btn {
   display: flex;
