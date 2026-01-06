@@ -1,0 +1,43 @@
+.container {
+  text-align: center;
+  color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.help__btn {
+  background-color: #4a7cff;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+}
+
+.help__btn:hover {
+  background-color: #3a65d6;
+}
+
+.help__box {
+  margin-top: 20px;
+  background-color: #222;
+  padding: 15px 20px;
+  border-radius: 8px;
+  max-width: 320px;
+  color: #ddd;
+}
+
+.help__box a {
+  color: #4a7cff;
+  text-decoration: none;
+}
+
+.help__box a:hover {
+  text-decoration: underline;
+}
+
+.hidden {
+  display: none;
+}

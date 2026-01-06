@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin-Panel</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/normaliza.css" />
+    <link rel="stylesheet" href="../css/fonts.css" />
+    <link rel="icon" href="../Img/image2.png" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="card">
+        <div class="card__left">
+          <ul class="navbar__list">
+            <li>
+              <h1>Dashboard</h1>
+              <a href="../Pages/dashboard.html" class="nav__link">
+                <i class="ri-home-4-line icon1"></i> Home
+              </a>
+            </li>
+            <li>
+              <a href="../Pages/carts.html" class="nav__link2"
+                ><i class="ri-box-3-line icon2"></i> Carts
+              </a>
+            </li>
+            <li>
+              <a href="../Pages/user.html" class="nav__link3"
+                ><i class="ri-file-user-line icon3"></i> Users</a
+              >
+            </li>
+            <li>
+              <a href="../Pages/analytics.html"
+                ><i class="ri-bar-chart-2-line"></i> Analytics</a
+              >
+            </li>
+            <li>
+              <a href="../Pages/settings.html" class="nav__link5"
+                ><i class="ri-settings-4-line icon5"></i> Settings</a
+              >
+            </li>
+            <li>
+              <a href="../Pages/help.html" class="nav__link6"
+                ><i class="ri-question-line icon6"></i> Help</a
+              >
+            </li>
+          </ul>
+
+          <button class="logout">
+            <i class="ri-logout-box-r-line"></i>
+            <span>logout</span>
+          </button>
+        </div>
+
+        <div class="card__right">
+          <nav class="navbar">
+            <header class="settings__header">
+              <h2>Admin-Panel</h2>
+            </header>
+            <div class="dashboard__user">
+              <img src="../Img/image.png" class="dashboard__avatar" />
+              <div>
+                <div class="dashboard__username">Farrux</div>
+                <div class="dashboard__user">Web Creator</div>
+              </div>
+            </div>
+          </nav>
+          <div class="container">
+            <button id="helpBtn" class="help__btn">Help</button>
+
+            <div id="helpBox" class="help__box hidden">
+              <p>
+                Если у вас есть проблемы, посетите
+                <a
+                  href="https://ru.wikipedia.org"
+                  target="_blank"
+                  >наш сайт</a
+                >
+                для получения информации.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="../Utills/help.js"></script>
+    <noscript>Java script is disabled!</noscript>
+  </body>
+</html>
