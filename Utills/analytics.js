@@ -8,3 +8,15 @@ if (link4.href === loc1) {
   link4.classList.toggle("active");
   icon4.classList.replace("ri-bar-chart-2-line", "ri-bar-chart-2-fill");
 }
+const logoutBtn = document.querySelector(".logout");
+
+const Logout = () => {
+  setTimeout(() => {
+    localStorage.removeItem("token");
+    window.location.href = "../index.html";
+  }, 800);
+};
+
+if (logoutBtn) {
+  logoutBtn.addEventListener("click", Logout);
+}

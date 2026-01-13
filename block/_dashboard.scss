@@ -63,8 +63,6 @@ h2 {
   transition: all 0.3s ease;
 }
 
-
-
 .card__left button {
   margin-top: 10px;
   margin-left: 15px;
@@ -194,9 +192,8 @@ tbody tr:hover {
   border: none;
 }
 .none {
-  display: none;
+  display: flex;
 }
-
 .modal {
   position: fixed;
   top: 0;
@@ -449,3 +446,5 @@ tbody tr:hover {
     box-shadow: 0 3px 10px rgba(115, 45, 145, 0.4);
   }
 }
+
+

@@ -18,32 +18,30 @@ if (logoutBtn) {
 const api = "https://fakestoreapi.com/products";
 const elBody = document.querySelector(".table__body");
 
-fetch(api)
-  .then((response) => response.json())
-  .then((product) => {
-    innerData(product);
-  });
-
 function innerData(product) {
   elBody.innerHTML = "";
 
   product.map(({ id, title, price, image, category, description }, index) => {
     elBody.innerHTML += `
-      <tr>
-        <td>${index + 1}</td>
-        <td>${title}</td>
-        <td>${category}</td>
-        <td>${description}...</td>
-        <td>$${price}</td>
-        <td>
-          <img src="${image}" width="60" height="60" style="object-fit:contain;">
-        </td>
-        <td class="action__buttons">
-          <button class="delete" onclick="deleteProduct(${id})"> <i class="ri-delete-bin-fill"></i> Delete</button>
-          <button class="edit"> <i class="ri-pencil-line"></i> Edit</button>
-        </td>
-      </tr>
-    `;
+        <tr>
+          <td>${index + 1}</td>
+          <td>${title}</td>
+          <td>${category}</td>
+          <td>${description}...</td>
+          <td>$${price}</td>
+          <td>
+            <img src="${image}" width="60" height="60" style="object-fit:contain;">
+          </td>
+          <td class="action__buttons">
+            <button class="delete" onclick="deleteProduct(${id})">
+              <i class="ri-delete-bin-fill"></i> Delete
+            </button>
+            <button class="edit">
+              <i class="ri-pencil-line"></i> Edit
+            </button>
+          </td>
+        </tr>
+      `;
   });
 
   document.querySelectorAll(".edit").forEach((btn) => {
@@ -59,26 +57,43 @@ function innerData(product) {
   });
 }
 
-function deleteProduct(id) {
-  fetch(`https://fakestoreapi.com/products/${id}`, {
-    method: "DELETE",
-  })
-    .then((res) => {
-      console.log(res);
-    })
-    .then((data) => {
-      Toastify({
-        text: "Product deleted",
-        duration: 2000,
-        gravity: "top",
-        position: "right",
-        style: {
-          background: "linear-gradient(to right, #b00000, red)",
-        },
-      }).showToast();
+fetch(api)
+  .then((response) => response.json())
+  .then((product) => {
+    innerData(product);
+  });
 
-      console.log(data);
+const getData = async (url) => {
+  try {
+    const request = await axios.get(url);
+    innerData(request.data);
+  } catch (error) {
+    console.error("ERROR");
+  }
+};
+
+getData(api);
+
+async function deleteProduct(id) {
+  try {
+    const response = await fetch(`https://fakestoreapi.com/products/${id}`, {
+      method: "DELETE",
     });
+
+    const data = await response.json();
+
+    Toastify({
+      text: "Product deleted",
+      duration: 2000,
+      gravity: "top",
+      position: "right",
+      style: {
+        background: "linear-gradient(to right, #b00000, red)",
+      },
+    }).showToast();
+  } catch (error) {
+    console.error("ERROR");
+  }
 }
 
 const modal = document.querySelector(".modal");
@@ -245,6 +260,6 @@ const link = document.querySelector(".nav__link");
 const icon1 = document.querySelector(".icon1");
 
 if (link.href === loc) {
-  link.classList.toggle("active");  
+  link.classList.toggle("active");
   icon1.classList.replace("ri-home-4-line", "ri-home-2-fill");
 }

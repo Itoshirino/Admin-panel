@@ -8,3 +8,14 @@ if (link5.href === loc1) {
   link5.classList.toggle("active");
   icon5.classList.replace("ri-settings-4-line", "ri-settings-4-fill");
 }
+const logoutBtn = document.querySelector(".logout");
+const Logout = () => {
+  setTimeout(() => {
+    localStorage.removeItem("token");
+    window.location.href = "../index.html";
+  }, 800);
+};
+
+if (logoutBtn) {
+  logoutBtn.addEventListener("click", Logout);
+}

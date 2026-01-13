@@ -1,5 +1,16 @@
 const helpBtn = document.getElementById('helpBtn');
 const helpBox = document.getElementById('helpBox');
+const logoutBtn = document.querySelector(".logout");
+const Logout = () => {
+  setTimeout(() => {
+    localStorage.removeItem("token");
+    window.location.href = "../index.html";
+  }, 800);
+};
+
+if (logoutBtn) {
+  logoutBtn.addEventListener("click", Logout);
+}
 
 helpBtn.addEventListener('click', () => {
   helpBox.classList.toggle('hidden');
@@ -15,5 +26,5 @@ const icon6 = document.querySelector(".icon6");
 
 if (link6.href === loc1) {
   link6.classList.toggle("active");
-  icon6.classList.replace("ri-box-3-line", "ri-box-3-fill");
+  icon6.classList.replace("ri-question-line", "ri-question-fill");
 }

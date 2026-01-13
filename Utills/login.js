@@ -11,6 +11,29 @@ const userInput = document.querySelector(".username");
 const passwd = document.querySelector(".passwd");
 const passwordIcon = document.querySelector(".passwd__icon");
 
+function showData(data) {
+  console.log(data);
+}
+
+try {
+  const postData = async (url) => {
+    const request = await axios.post(
+      url,
+      (data = {
+        username: "derek",
+        password: "jklg*_56",
+      })
+    );
+    return request.data;
+  };
+  const result = postData("https://fakestoreapi.com/auth/login").then((data) =>
+    showData(data)
+  );
+} catch (error) {
+  console.log(error);
+  throw new Error(error);
+}
+
 exitBtn.addEventListener("click", () => {
   securityForm.style.display = "none";
   elForm.style.display = "block";
@@ -102,6 +125,56 @@ loginBtn.addEventListener("click", (e) => {
     return;
   }
 
+  const form = document.querySelector(".form");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const username = form["username"].value.trim();
+    const password = form["password"].value.trim();
+
+    if (username === "derek" && password == "jklg*_56") {
+      window.location.href = "../Pages/dashboard.html";
+    } else {
+      const user = {
+        username,
+        password,
+      };
+
+      fetch(api, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(user),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          const token = data.token;
+
+          if (token) {
+            Toastify({
+              text: "Successfull!",
+              duration: 3000,
+              destination: "https://github.com/apvarun/toastify-js",
+              newWindow: true,
+              close: true,
+              gravity: "top",
+              position: "right",
+              stopOnFocus: true,
+              style: {
+                background: "linear-gradient(to right, #2faf08ff, #2faf08ff)",
+              },
+              onClick: function () {},
+            }).showToast();
+            setTimeout(() => {
+              localStorage.setItem("token", token);
+              window.location.href = "./Pages/dashboard.html";
+            }, 1000);
+          }
+        });
+    }
+  };
+
+  form.addEventListener("submit", handleSubmit);
+
   if (username === "derek" && password === "jklg*_56") {
     Toastify({
       text: "Admin login success",
@@ -140,7 +213,3 @@ document.addEventListener("keydown", (e) => {
     e.preventDefault();
   }
 });
-
-
-
-
