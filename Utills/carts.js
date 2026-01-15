@@ -3,6 +3,10 @@ const elTbody = document.querySelector(".table__body");
 const logoutBtn = document.querySelector(".logout");
 const modal = document.querySelector(".show-product");
 const cancel = document.querySelector(".modal__close");
+const editModal = document.querySelector(".edit__modal");
+const cancelBtnEdit = document.querySelector(".edit__cancel1");
+const editBtn = document.querySelector(".edit");
+editModal.style.display = "none";
 
 const Logout = () => {
   setTimeout(() => {
@@ -32,8 +36,37 @@ function innerCarts(product) {
               <button onclick="deleteProduct(${id})" class="delete">
                 <i class="ri-delete-bin-line"></i> Delete
               </button>
+              <button class="edit">
+              <i class="ri-pencil-line"></i> Edit
+            </button>
             </td>
           </tr>`;
+  });
+  document.querySelectorAll(".edit").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      editModal.style.display = "flex";
+    });
+  });
+  document.querySelectorAll(".task__create1").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (editModal) {
+        Toastify({
+          text: "Edited Successfully",
+          duration: 2000,
+          gravity: "top",
+          position: "center",
+          style: {
+            background: "linear-gradient(to right, #96c93d, #00b038ff)",
+          },
+        }).showToast();
+        editModal.style.display = "none";
+      }
+    });
+  });
+  document.querySelectorAll(".task__cancel1").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      editModal.style.display = "none";
+    });
   });
 }
 
@@ -55,7 +88,7 @@ async function deleteProduct(id) {
       },
     }).showToast();
   } catch (error) {
-    console.error("ERROR");
+    console.error(error);
   }
 }
 
@@ -77,11 +110,10 @@ const getData = async (url) => {
 
     innerCarts(request.data);
   } catch (error) {
-    console.error("ERROR");
+    console.error(error);
   }
+  getData(api);
 };
-
-getData(api);
 
 const loc1 = window.location.href;
 
@@ -150,7 +182,7 @@ async function openModal(id) {
           align-self: center;
           margin-top: 10px;
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        " class="modal__image" src="${image}" alt="${title}" />
+        " class="modal__image" src="${image}" alt="" />
       </div>
       <button onclick="closeModal()" style="
        background: #ef476f;
@@ -168,7 +200,7 @@ async function openModal(id) {
       " class="modal__close">Close</button>
     `;
   } catch (error) {
-    console.error("ERROR");
+    console.error(error);
   }
 }
 function closeModal() {

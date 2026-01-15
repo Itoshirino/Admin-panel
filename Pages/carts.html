@@ -90,8 +90,34 @@
               </thead>
               <tbody class="table__body"></tbody>
             </table>
-            <div class="show-product hidden">
-             
+            <div class="show-product hidden"></div>
+            <div class="edit__modal none">
+              <div class="edit__modal__content">
+                <h3>Edit Task</h3>
+
+                <input type="text" placeholder="Title" class="task__title" />
+                <input
+                  type="text"
+                  placeholder="Category"
+                  class="task__category"
+                />
+                <input
+                  type="text"
+                  placeholder="Description"
+                  class="task__desc"
+                />
+                <input type="number" placeholder="Price$" class="task__price" />
+                <input
+                  type="text"
+                  placeholder="Image URL"
+                  class="task__image"
+                />
+
+                <div class="edit__modal__btn">
+                  <button class="task__create1">Edit</button>
+                  <button class="task__cancel1">Cancel</button>
+                </div>
+              </div>
             </div>
           </main>
         </div>

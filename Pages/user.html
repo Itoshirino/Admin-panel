@@ -41,13 +41,19 @@
               >
             </li>
             <li>
-              <a href="../Pages/analytics.html"><i class="ri-bar-chart-2-line"></i> Analytics</a>
+              <a href="../Pages/analytics.html"
+                ><i class="ri-bar-chart-2-line"></i> Analytics</a
+              >
             </li>
             <li>
-              <a href="../Pages/settings.html"><i class="ri-settings-4-line"></i> Settings</a>
+              <a href="../Pages/settings.html"
+                ><i class="ri-settings-4-line"></i> Settings</a
+              >
             </li>
             <li>
-              <a href="../Pages/help.html"><i class="ri-question-line"></i> Help</a>
+              <a href="../Pages/help.html"
+                ><i class="ri-question-line"></i> Help</a
+              >
             </li>
           </ul>
 
@@ -80,15 +86,46 @@
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Title</th>
-                  <th>Category</th>
-                  <th>Description</th>
-                  <th>Price</th>
-                  <th>Image</th>
-                  <th>Action</th>
+                  <th>Username</th>
+                  <th>Email</th>
+                  <th>Password</th>
+                  <th>Actions</th>
                 </tr>
               </thead>
 
+              <tbody class="table__body">
+                <tr>
+                 
+                </tr>
+              </tbody>
+              <div class="edit__modal none">
+              <div class="edit__modal__content">
+                <h3>Edit Task</h3>
+
+                <input type="text" placeholder="Title" class="task__title" />
+                <input
+                  type="text"
+                  placeholder="Category"
+                  class="task__category"
+                />
+                <input
+                  type="text"
+                  placeholder="Description"
+                  class="task__desc"
+                />
+                <input type="number" placeholder="Price$" class="task__price" />
+                <input
+                  type="text"
+                  placeholder="Image URL"
+                  class="task__image"
+                />
+
+                <div class="edit__modal__btn">
+                  <button class="task__create1">Edit</button>
+                  <button class="task__cancel1">Cancel</button>
+                </div>
+              </div>
+            </div>
             </table>
           </main>
         </div>

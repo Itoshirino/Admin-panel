@@ -1,6 +1,6 @@
 const logoutBtn = document.querySelector(".logout");
 const editModal = document.querySelector(".edit__modal");
-const cancelBtnEdit = document.querySelector(".edit__cancel1");
+const cancelBtnEdit = document.querySelector(".task__cancel1");
 
 editModal.style.display = "none";
 
@@ -49,13 +49,28 @@ function innerData(product) {
       editModal.style.display = "flex";
     });
   });
-
-  document.querySelectorAll(".task__cancel1").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      editModal.style.display = "none";
-    });
-  });
 }
+document.querySelectorAll(".task__create1").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    if (editModal) {
+      Toastify({
+        text: "Edited Successfully",
+        duration: 2000,
+        gravity: "top",
+        position: "center",
+        style: {
+          background: "linear-gradient(to right, #96c93d, #00b038ff)",
+        },
+      }).showToast();
+      editModal.style.display = "none";
+    }
+  });
+});
+document.querySelectorAll(".task__cancel1").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    editModal.style.display = "none";
+  });
+});
 
 fetch(api)
   .then((response) => response.json())
@@ -70,9 +85,8 @@ const getData = async (url) => {
   } catch (error) {
     console.error("ERROR");
   }
+  getData(api);
 };
-
-getData(api);
 
 async function deleteProduct(id) {
   try {
@@ -92,7 +106,7 @@ async function deleteProduct(id) {
       },
     }).showToast();
   } catch (error) {
-    console.error("ERROR");
+    console.error(error);
   }
 }
 
@@ -101,9 +115,6 @@ const createBtn = document.querySelector(".create__btn");
 const taskCreateBtn = document.querySelector(".task__create");
 const cancelBtn = document.querySelector(".task__cancel");
 const deleteBtn = document.querySelector(".delete");
-const editBtn = document.querySelector(".edit");
-
-console.log(editBtn);
 
 modal.style.display = "none";
 
@@ -234,6 +245,22 @@ function map({ id, title, price, image, category, description }) {
   document.querySelectorAll(".edit").forEach((btn) => {
     btn.addEventListener("click", () => {
       editModal.style.display = "flex";
+    });
+  });
+
+  document.querySelectorAll(".task__create1").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (editModal) {
+        Toastify({
+          text: "Edited Successfully",
+          duration: 2000,
+          gravity: "top",
+          position: "right",
+          style: {
+            background: "linear-gradient(to right, #96c93d, #00b038ff)",
+          },
+        }).showToast();
+      }
     });
   });
 
